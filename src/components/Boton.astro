@@ -15,25 +15,32 @@ const { image, imageAlt } = Astro.props;
     border-radius: 1rem;
     font-size: 4rem;
     margin-bottom: 2rem;
-    transition:transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
     align-items: center;
 
-    img{
-        width: 5rem;
-        padding: 0 1rem 0 0;
+    img {
+      width: 5rem;
+      padding: 0 1rem 0 0;
     }
-
-    &:hover{
-    transform:scale(1.1);
+    &:hover {
+      transform: scale(1.1);
+    }
   }
-
+  @media screen and (max-width: 800px) {
+    .boton {
+      font-size: 2rem;
+    
+      img{
+        width:4rem;
+        padding:0 0.5rem 0 0;
+      }
+    }
   }
 </style>
 
 <a class="boton" href="#">
-    <img src={image} alt={imageAlt}/>
-    <span>
-      <slot />
-    </span>
-  </a>
-
+  <img src={image} alt={imageAlt} />
+  <span>
+    <slot />
+  </span>
+</a>
