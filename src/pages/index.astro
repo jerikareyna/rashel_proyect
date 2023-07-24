@@ -33,6 +33,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       place-items: center;
 
       .text-container {
+		padding: 1rem;
         h1 {
           font-size: 8rem;
           margin-bottom: 2rem;
@@ -40,7 +41,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
         p {
           margin-bottom: 4rem;
-		  font-size: 2rem;
+          font-size: 2rem;
         }
 
         a {
@@ -50,15 +51,27 @@ import MainLayout from "../layouts/MainLayout.astro";
           display: block;
           max-width: fit-content;
           margin: auto;
-		  font-size: 2rem;
-		  border-radius:1rem;
-		  transition: background-color 200ms ease-in-out;
+          font-size: 2rem;
+          border-radius: 1rem;
+          transition: background-color 200ms ease-in-out;
 
-		  &:hover{
-			background-color: colors.$verde-oscuro;
-		  }
-		}
-
+          &:hover {
+            background-color: colors.$verde-oscuro;
+          }
+        }
+        @media screen and (max-width: 800px) {
+          h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+          }
+          p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+          }
+          a {
+            font-size: 1rem;
+          }
+        }
       }
     }
   }
