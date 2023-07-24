@@ -1,0 +1,39 @@
+---
+import "../styles/index.scss";
+const { image, imageAlt } = Astro.props;
+---
+
+<style lang="scss">
+  @use "../styles/colors";
+  .boton {
+    background-color: colors.$verde-oscuro;
+    color: colors.$negro;
+    padding: 1rem 2rem;
+    display: flex;
+    max-width: fit-content;
+    margin: auto;
+    border-radius: 1rem;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    transition:transform 200ms ease-in-out;
+    align-items: center;
+
+    img{
+        width: 5rem;
+        padding: 0 1rem 0 0;
+    }
+
+    &:hover{
+    transform:scale(1.1);
+  }
+
+  }
+</style>
+
+<a class="boton" href="#">
+    <img src={image} alt={imageAlt}/>
+    <span>
+      <slot />
+    </span>
+  </a>
+
